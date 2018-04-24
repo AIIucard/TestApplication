@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddDiscussionParticipant"></activity>
+        <activity android:name=".AddDiscussionParticipant" />
+        <activity android:name=".ItentTestActivity"></activity>
     </application>
 
 </manifest>
