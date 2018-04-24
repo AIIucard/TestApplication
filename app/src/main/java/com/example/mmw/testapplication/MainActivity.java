@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,11 +14,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    protected void OnClick(View view){
-        Intent i = new Intent(this,AddDiscussionParticipant.class);
-        startActivity(i);
+        try{
+            ((Button) findViewById(R.id.button1)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onButton1();
+                }
+            });
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        try{
+            ((Button) findViewById(R.id.button7)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onButton7();
+                }
+            });
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -32,5 +50,16 @@ public class MainActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_FULLSCREEN
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
+    }
+
+    private void onButton1() {
+        Intent intent1 = new Intent(this, AddDiscussionParticipant.class);
+        startActivity(intent1);
+    }
+
+    private void onButton7() {
+        Intent intent7 = new Intent(this, ItentTestActivity.class);
+        startActivity(intent7);
+        //TODO function of button7
     }
 }
